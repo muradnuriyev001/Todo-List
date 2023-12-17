@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+  background-color: rgb(120, 11, 184);
+  padding: 10px 20px;
+  width: 600px;
+}
+
+.todo-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-empty {
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+}

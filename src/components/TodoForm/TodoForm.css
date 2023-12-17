@@ -1,0 +1,9 @@
+.form input,
+button {
+  padding: 15px 40px;
+  margin-left: 5px;
+}
+
+.form{
+  padding: 30px 0px;
+}
