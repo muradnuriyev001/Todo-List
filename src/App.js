@@ -9,7 +9,7 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const addTodoHandler = (todo) => {
-    setTodos([...todos, { value: todo, id: uuidv4() }]);
+    setTodos([...todos, { value: todo, id: uuidv4(), isCompleted: false }]);
   };
 
   const deleteTodoHandler = (id) => {
@@ -18,6 +18,16 @@ function App() {
 
   const emptyTodoHandler = () => {
     setTodos([]);
+  };
+
+  const toggleTodoHandler = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id
+          ? { ...todo, isCompleted: !todo.isCompleted }
+          : { ...todo }
+      )
+    );
   };
 
   console.log(todos);
@@ -40,7 +50,11 @@ function App() {
       {!todos.length ? (
         <h1 className="todo-empty">Todo List is Empty</h1>
       ) : (
-        <TodoList deleteTodo={deleteTodoHandler} todos={todos} />
+        <TodoList
+          toggleTodo={toggleTodoHandler}
+          deleteTodo={deleteTodoHandler}
+          todos={todos}
+        />
       )}
     </div>
   );
