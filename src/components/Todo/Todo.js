@@ -1,20 +1,23 @@
-import "./Todo.css";
 import { MdOutlineDeleteForever } from "react-icons/md";
 import { FaCheckSquare } from "react-icons/fa";
-
+import styles from "./Todo.module.css";
 const Todo = ({ todo, deleteTodo, toggleTodo }) => {
   return (
-    <div className="todo">
+    <div
+      className={`${styles.todo} ${
+        todo.isCompleted ? styles.completedTodo : ""
+      }`}
+    >
       <article>{todo.value}</article>
-      <div className="delete-checked-buttons">
+      <div className={styles.deleteCheckedBtnCenter}>
         <MdOutlineDeleteForever
           title="Delete Todo"
-          style={{ fontSize: "22px", cursor: "pointer" }}
+          className={styles.deleteIcon}
           onClick={() => deleteTodo(todo.id)}
         />
         <FaCheckSquare
           onClick={() => toggleTodo(todo.id)}
-          style={{ fontSize: "18px", cursor: "pointer" }}
+          className={styles.checkIcon}
           title="Mark as checked"
         />
       </div>

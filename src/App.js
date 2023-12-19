@@ -4,6 +4,7 @@ import TodoForm from "./components/TodoForm/TodoForm";
 import { TodoList } from "./components/TodoList/TodoList";
 import { v4 as uuidv4 } from "uuid";
 import { RiDeleteBin2Line } from "react-icons/ri";
+import { GrClearOption } from "react-icons/gr";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -18,6 +19,10 @@ function App() {
 
   const emptyTodoHandler = () => {
     setTodos([]);
+  };
+
+  const deleteAllCompletedTodosHandler = (isCompleted) => {
+    setTodos(todos.filter((todo) => todo.isCompleted === false));
   };
 
   const toggleTodoHandler = (id) => {
@@ -38,6 +43,16 @@ function App() {
         <RiDeleteBin2Line
           title="Delete All"
           onClick={emptyTodoHandler}
+          style={{
+            fontSize: "35px",
+            color: "white",
+            paddingLeft: "5px",
+            cursor: "pointer",
+          }}
+        />
+        <GrClearOption
+          title="Delete All Completed"
+          onClick={deleteAllCompletedTodosHandler}
           style={{
             fontSize: "35px",
             color: "white",
