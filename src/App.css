@@ -8,9 +8,13 @@
 
 .todo-flex {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+.todo-logos-flex{
+  flex-direction: row;
+  padding-bottom: 20px;
 }
 
 .todo-empty {

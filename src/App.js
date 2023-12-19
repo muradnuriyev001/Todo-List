@@ -3,8 +3,8 @@ import "./App.css";
 import TodoForm from "./components/TodoForm/TodoForm";
 import { TodoList } from "./components/TodoList/TodoList";
 import { v4 as uuidv4 } from "uuid";
-import { RiDeleteBin2Line } from "react-icons/ri";
-import { GrClearOption } from "react-icons/gr";
+import { IoTrashBinOutline } from "react-icons/io5";
+import { AiOutlineClear } from "react-icons/ai";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -36,30 +36,29 @@ function App() {
   };
 
   console.log(todos);
+
+  let iconsStyle = {
+    fontSize: "35px",
+    color: "whitesmoke",
+    paddingLeft: "5px",
+    cursor: "pointer",
+  };
   return (
     <div className="App">
       <div className="todo-flex">
         <TodoForm addTodo={addTodoHandler} />
-        <RiDeleteBin2Line
-          title="Delete All"
-          onClick={emptyTodoHandler}
-          style={{
-            fontSize: "35px",
-            color: "white",
-            paddingLeft: "5px",
-            cursor: "pointer",
-          }}
-        />
-        <GrClearOption
-          title="Delete All Completed"
-          onClick={deleteAllCompletedTodosHandler}
-          style={{
-            fontSize: "35px",
-            color: "white",
-            paddingLeft: "5px",
-            cursor: "pointer",
-          }}
-        />
+        <div className="todo-logos-flex">
+          <IoTrashBinOutline
+            title="Delete All"
+            onClick={emptyTodoHandler}
+            style={iconsStyle}
+          />
+          <AiOutlineClear
+            title="Delete All Completed"
+            onClick={deleteAllCompletedTodosHandler}
+            style={iconsStyle}
+          />
+        </div>
       </div>
 
       {!todos.length ? (
