@@ -37,12 +37,6 @@ function App() {
 
   console.log(todos);
 
-  let iconsStyle = {
-    fontSize: "35px",
-    color: "whitesmoke",
-    paddingLeft: "5px",
-    cursor: "pointer",
-  };
   return (
     <div className="App">
       <div className="todo-flex">
@@ -51,12 +45,12 @@ function App() {
           <IoTrashBinOutline
             title="Delete All"
             onClick={emptyTodoHandler}
-            style={iconsStyle}
+            className="icons"
           />
           <AiOutlineClear
             title="Delete All Completed"
             onClick={deleteAllCompletedTodosHandler}
-            style={iconsStyle}
+            className="icons"
           />
         </div>
       </div>

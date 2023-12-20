@@ -19,9 +19,9 @@
 }
 
 .completedTodo {
-  background-color: unset;
+  background-color: rgb(137, 90, 175);
   border-color: rgb(35, 35, 35);
-  color: rgb(73, 73, 73);
+  color: rgb(205, 202, 202);
 }
 
 .todo.completedTodo .checkIcon,
